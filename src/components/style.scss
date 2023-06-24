@@ -1,0 +1,111 @@
+.calendar{
+    &__wrapper {
+        width: 99%;
+        height: 100vh;
+        border: 1px solid #000;
+        margin: 5px;    
+    }
+
+    &__head {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 24px;
+    }
+
+    &__seven-col-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        height: 27px;
+    }
+
+    &__head-day {
+        text-align: center;
+        color: white;
+        background: black;
+        font-size: 1.2rem;
+    }
+
+    &__body {
+        &--4 {
+            height: calc(100% - 27px - 40px);
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            cursor: pointer;
+        }
+        &--5 {
+            height: calc(100% - 27px - 40px);
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            cursor: pointer;
+        }
+    }
+
+    &__day {
+        border: 1px solid;
+        text-align: left;
+        padding: 5px;
+        p {
+            padding-bottom: 8px;
+        }
+    }
+
+    &__event {
+        display: grid;
+        text-align: left;
+        color: #fff;
+        margin-bottom: 8px;
+        padding: 2px 5px;
+        border-radius: 5px;
+    }
+}
+
+.active {
+    background: pink;   
+}
+
+.portal {
+    &__wrapper {
+        background: white;
+        position: absolute;
+        width: 60%;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        border-radius: 6px;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        ion-icon {
+            font-size: 1rem;
+            color: red;
+            background: lightblue;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ion-icon[name="close-outline"] {
+            top: 10px;
+            right: 10px;
+            background: red;
+            position: absolute;
+            font-weight: 600;
+            color: lightblue;
+        }
+    }
+}
